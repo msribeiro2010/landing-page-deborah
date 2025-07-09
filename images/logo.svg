@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&amp;display=swap');
+    </style>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Flor de Lótus -->
+  <g transform="translate(200,120)">
+    <!-- Pétalas externas -->
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(0)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(45)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(90)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(135)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(180)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(225)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(270)"/>
+    <path d="M0,-60 C-15,-45 -25,-25 -25,0 C-25,25 -15,45 0,60 C15,45 25,25 25,0 C25,-25 15,-45 0,-60 Z" fill="none" stroke="url(#goldGradient)" stroke-width="3" transform="rotate(315)"/>
+    
+    <!-- Centro da flor com pontos -->
+    <line x1="0" y1="-80" x2="0" y2="80" stroke="url(#goldGradient)" stroke-width="4"/>
+    <circle cx="0" cy="-70" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="-55" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="-40" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="-25" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="-10" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="5" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="20" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="35" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="50" r="4" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="65" r="4" fill="url(#goldGradient)"/>
+  </g>
+  
+  <!-- Texto Deborah -->
+  <text x="200" y="260" font-family="'Dancing Script', cursive" font-size="48" font-weight="400" text-anchor="middle" fill="url(#goldGradient)">Deborah</text>
+  
+  <!-- Texto Santalena -->
+  <text x="200" y="310" font-family="'Dancing Script', cursive" font-size="48" font-weight="400" text-anchor="middle" fill="url(#goldGradient)">Santalena</text>
+</svg>

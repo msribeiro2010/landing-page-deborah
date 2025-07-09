@@ -39,7 +39,7 @@ body {
 /* --- Header & Footer --- */
 .main-header {
     text-align: center;
-    padding: 80px 20px;
+    padding: 40px 20px;
     background: var(--gradient-primary);
     color: white;
     position: relative;
@@ -61,6 +61,23 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
+}
+
+.header-logo {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .main-header h1 {
@@ -568,8 +585,85 @@ body:has(.admin-indicator) {
     opacity: 0.9;
 }
 
+/* --- Seção de Contato --- */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.contact-details h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contact-details p {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.contact-details strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .contact-item {
+        padding: 20px;
+    }
+    
+    .logo {
+        height: 80px;
+    }
+    
+    .main-header {
+        padding: 30px 20px;
+    }
+    
     .about-section {
         flex-direction: column;
         text-align: center;
