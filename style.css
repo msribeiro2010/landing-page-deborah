@@ -41,12 +41,18 @@ body {
 
 /* --- Header & Footer --- */
 .main-header {
-    text-align: center;
-    padding: 40px 20px;
     background: var(--gradient-primary);
-    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
     position: relative;
     overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header * {
+    color: white !important;
 }
 
 .main-header::before {
@@ -56,9 +62,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23fff" stop-opacity=".1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><circle cx="10" cy="10" r="10" fill="url(%23a)"/><circle cx="30" cy="10" r="10" fill="url(%23a)"/><circle cx="50" cy="10" r="10" fill="url(%23a)"/><circle cx="70" cy="10" r="10" fill="url(%23a)"/><circle cx="90" cy="10" r="10" fill="url(%23a)"/></svg>') repeat;
-    opacity: 0.1;
-    animation: float 20s ease-in-out infinite;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -66,15 +71,26 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-.header-logo {
+.header-content {
     position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo {
-    height: 120px;
-    width: auto;
+    height: 60px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
 }
@@ -83,24 +99,93 @@ body {
     transform: scale(1.05);
 }
 
-.main-header h1 {
-    font-family: var(--font-headings);
-    font-size: 3.5em;
-    margin: 0 0 15px 0;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 1;
-}
-
-.main-header p {
-    font-size: 1.3em;
+.brand-text {
+    color: white !important;
+    font-size: 1.1rem;
     margin: 0;
-    opacity: 0.95;
     font-weight: 300;
     letter-spacing: 1px;
+}
+
+.brand-text i {
+    color: #ffd700;
+    margin: 0 8px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: white !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-menu a:hover::before {
+    left: 100%;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.nav-menu a:active {
+     transform: translateY(0);
+ }
+
+ .nav-menu a.active {
+     background: rgba(255, 255, 255, 0.25);
+     border-color: rgba(255, 255, 255, 0.5);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .nav-menu a i {
+     margin-right: 8px;
+     font-size: 0.9rem;
+ }
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .main-footer {
@@ -108,9 +193,13 @@ body {
     padding: 50px 20px;
     margin-top: 60px;
     background: var(--gradient-primary);
-    color: white;
+    color: white !important;
     position: relative;
     overflow: hidden;
+}
+
+.main-footer * {
+    color: white !important;
 }
 
 .main-footer::before {
@@ -367,6 +456,21 @@ section h2::after {
 
 .delete-button:hover { background-color: #c82333; }
 
+/* --- Correção de Cores para Elementos com Fundo Escuro --- */
+button, .cta-button, input[type="submit"], input[type="button"] {
+    color: white !important;
+}
+
+[style*="background: var(--gradient-primary)"], 
+[style*="background: var(--gradient-secondary)"],
+.gradient-bg {
+    color: white !important;
+}
+
+.gradient-bg * {
+    color: white !important;
+}
+
 /* --- Formulários --- */
 form {
     text-align: left;
@@ -437,6 +541,7 @@ form {
 
 .cta-button.secondary {
     background: var(--gradient-secondary);
+    color: white;
 }
 
 .cta-button:active {
@@ -453,10 +558,14 @@ form {
     left: 0;
     right: 0;
     background-color: var(--primary-color);
-    color: white;
+    color: white !important;
     padding: 10px 20px;
     z-index: 1000;
     box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.admin-indicator * {
+    color: white !important;
 }
 
 .admin-info {
@@ -508,6 +617,153 @@ body:has(.admin-indicator) {
     box-shadow: 0 20px 60px rgba(102, 126, 234, 0.1);
 }
 
+/* Seção Tratamentos Terapêuticos */
+.treatments-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f1ed 0%, #ede4db 100%);
+}
+
+.treatments-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.treatments-section .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 15px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.treatments-section .section-note {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.highlight-message {
+    background: var(--gradient-primary);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px auto 50px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+}
+
+.highlight-message p {
+    color: white !important;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.highlight-message i {
+    color: #ffd700;
+    margin: 0 8px;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.treatment-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.treatment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+    border-color: var(--accent-color);
+}
+
+.treatment-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+}
+
+.treatment-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.treatment-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.treatment-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.treatment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
+    border-radius: 10px;
+}
+
+.treatment-info .duration {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.treatment-info .price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.treatment-card .cta-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.treatment-card .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+}
+
 .about-text {
     flex: 1;
 }
@@ -538,9 +794,13 @@ body:has(.admin-indicator) {
 
 .testimonials-section {
     background: var(--gradient-primary);
-    color: white;
+    color: white !important;
     position: relative;
     overflow: hidden;
+}
+
+.testimonials-section * {
+    color: white !important;
 }
 
 .testimonials-section::before {
@@ -692,8 +952,74 @@ body:has(.admin-indicator) {
     
     /* Header */
     .main-header {
-        padding: 25px 15px;
+        padding: 15px 0;
     }
+    
+    .header-content {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--gradient-primary);
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    }
+    
+    .nav-menu.mobile-open a {
+         width: 100%;
+         text-align: center;
+         padding: 15px;
+         margin: 0;
+     }
+     
+     .logo-section {
+         flex-direction: column;
+         gap: 10px;
+         text-align: center;
+     }
+     
+     .brand-text {
+         font-size: 1rem;
+     }
+ }
+ 
+ /* Tablets */
+ @media (max-width: 768px) and (min-width: 481px) {
+     .header-content {
+         padding: 0 20px;
+     }
+     
+     .nav-menu {
+         gap: 20px;
+     }
+     
+     .nav-menu a {
+         padding: 8px 16px;
+         font-size: 0.95rem;
+     }
+     
+     .logo {
+         height: 55px;
+     }
+     
+     .brand-text {
+         font-size: 1.05rem;
+     }
     
     .logo {
         height: 80px;
@@ -941,6 +1267,53 @@ body:has(.admin-indicator) {
     
     .main-footer {
         padding: 30px 10px;
+    }
+
+    /* Tratamentos Responsivos */
+    .treatments-section {
+        padding: 60px 0;
+    }
+
+    .treatments-section h2 {
+        font-size: 2rem;
+    }
+
+    .treatments-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .treatment-card {
+        padding: 25px;
+    }
+
+    .treatment-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .treatment-icon i {
+        font-size: 1.8rem;
+    }
+
+    .treatment-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .treatment-info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .highlight-message {
+        margin: 20px auto 30px;
+        padding: 15px;
+    }
+
+    .highlight-message p {
+        font-size: 1rem;
     }
 }
 

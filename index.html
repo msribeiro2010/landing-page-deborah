@@ -13,13 +13,28 @@
 <body>
 
     <header class="main-header">
-        <div class="header-logo">
-            <img src="images/logo.svg" alt="Deborah Santalena - Massoterapia" class="logo">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="images/logo.svg" alt="Deborah Santalena - Massoterapia" class="logo">
+                <p class="brand-text"><i class="fas fa-heart"></i> Massoterapia com Toque de Cuidado <i class="fas fa-heart"></i></p>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home"><i class="fas fa-home"></i> Início</a>
+                <a href="#about"><i class="fas fa-user"></i> Sobre Mim</a>
+                <a href="#treatments"><i class="fas fa-spa"></i> Tratamentos</a>
+                <a href="#services"><i class="fas fa-magic"></i> Serviços</a>
+                <a href="#testimonials"><i class="fas fa-comments"></i> Depoimentos</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contato</a>
+            </nav>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <p><i class="fas fa-heart"></i> Massoterapia com Toque de Cuidado <i class="fas fa-heart"></i></p>
     </header>
 
-    <section id="hero-section" class="hero-section">
+    <section id="home" class="hero-section">
         <div class="hero-text">
             <h2><i class="fas fa-leaf"></i> Cuidado, bem-estar e equilíbrio</h2>
             <p><i class="fas fa-meditation"></i> Permita-se uma pausa para reconectar corpo e mente <i class="fas fa-meditation"></i></p>
@@ -34,6 +49,93 @@
             <div class="about-text">
                 <h2><i class="fas fa-user-heart"></i> Sobre Mim</h2>
                 <p><i class="fas fa-hands-helping"></i> Com uma paixão pelo poder terapêutico do toque, minha missão é proporcionar alívio, conforto e bem-estar. Acredito que a massoterapia é uma ferramenta essencial para a saúde integral, ajudando a restaurar o equilíbrio natural do corpo e a acalmar a mente. Cada sessão é pensada para atender às suas necessidades individuais.</p>
+            </div>
+        </section>
+
+        <section id="treatments" class="treatments-section">
+            <h2><i class="fas fa-spa"></i> Tratamentos Terapêuticos</h2>
+            <p class="section-description">Oferecemos diversas técnicas de massoterapia para atender às suas necessidades específicas, proporcionando alívio de tensão e promovendo bem-estar integral.</p>
+            <p class="section-note">Todas as modalidades podem ser associadas com aromaterapia e ventosaterapia.</p>
+            
+            <div class="highlight-message">
+                <p><i class="fas fa-sparkles"></i> Dedicado exclusivamente às mulheres — Um lugar onde beleza e serenidade florescem através do toque terapêutico <i class="fas fa-sparkles"></i></p>
+            </div>
+
+            <div class="treatments-grid">
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Massagem Relaxante</h3>
+                    <p>Técnica suave que promove relaxamento profundo e alívio do estresse</p>
+                    <div class="treatment-info">
+                        <span class="duration">60 minutos</span>
+                        <span class="price">R$ 150,00</span>
+                    </div>
+                    <a href="https://wa.me/5519971333256?text=Olá! Gostaria de agendar uma Massagem Relaxante" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-plus"></i> Agendar
+                    </a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Massagem Terapêutica</h3>
+                    <p>Focada em pontos específicos para alívio de dores e tensões musculares</p>
+                    <div class="treatment-info">
+                        <span class="duration">60 minutos</span>
+                        <span class="price">R$ 180,00</span>
+                    </div>
+                    <a href="https://wa.me/5519971333256?text=Olá! Gostaria de agendar uma Massagem Terapêutica" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-plus"></i> Agendar
+                    </a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Massagem com Pedras Quentes</h3>
+                    <p>Combina massagem tradicional com pedras aquecidas para relaxamento profundo</p>
+                    <div class="treatment-info">
+                        <span class="duration">90 minutos</span>
+                        <span class="price">R$ 220,00</span>
+                    </div>
+                    <a href="https://wa.me/5519971333256?text=Olá! Gostaria de agendar uma Massagem com Pedras Quentes" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-plus"></i> Agendar
+                    </a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Massagem Desportiva</h3>
+                    <p>Ideal para atletas, ajuda na recuperação muscular e prevenção de lesões</p>
+                    <div class="treatment-info">
+                        <span class="duration">60 minutos</span>
+                        <span class="price">R$ 200,00</span>
+                    </div>
+                    <a href="https://wa.me/5519971333256?text=Olá! Gostaria de agendar uma Massagem Desportiva" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-plus"></i> Agendar
+                    </a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Drenagem Linfática</h3>
+                    <p>Técnica que estimula o sistema linfático, reduzindo inchaços e toxinas</p>
+                    <div class="treatment-info">
+                        <span class="duration">60 minutos</span>
+                        <span class="price">R$ 160,00</span>
+                    </div>
+                    <a href="https://wa.me/5519971333256?text=Olá! Gostaria de agendar uma Drenagem Linfática" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-plus"></i> Agendar
+                    </a>
+                </div>
             </div>
         </section>
 
