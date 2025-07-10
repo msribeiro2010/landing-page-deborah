@@ -240,7 +240,7 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    background: var(--gradient-hero), url('images/hero-bg.jpg');
+    background: var(--gradient-hero);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -349,6 +349,38 @@ section h2::after {
     padding: 0 20px;
 }
 
+/* --- Placeholders para imagens --- */
+.image-placeholder, .profile-pic-placeholder {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3em;
+    border-radius: 8px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.profile-pic-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 4em;
+    margin: 0 auto;
+}
+
+.image-placeholder:hover, .profile-pic-placeholder:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.image-placeholder i, .profile-pic-placeholder i {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 .card, .gallery-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -419,6 +451,52 @@ section h2::after {
     background-color: var(--light-gray-bg);
     border-radius: 8px;
     box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+/* --- Indicador de Status de Conexão --- */
+.connection-status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.connection-status.checking {
+    color: #ff9800;
+    border-color: #ff9800;
+}
+
+.connection-status.checking i {
+    animation: pulse 1.5s infinite;
+}
+
+.connection-status.online {
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+.connection-status.offline {
+    color: #f44336;
+    border-color: #f44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 /* --- Painel de Admin --- */
